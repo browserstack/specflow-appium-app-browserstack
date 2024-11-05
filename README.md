@@ -49,7 +49,7 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 ```sh
 dotnet add BrowserStack.TestAdapter
 ```
-- Build project dotnet build
+- Build project `dotnet build`
 
 --
 
