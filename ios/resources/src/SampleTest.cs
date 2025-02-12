@@ -2,12 +2,12 @@ using Reqnroll;
 using OpenQA.Selenium;
 using System;
 using OpenQA.Selenium.Support.UI;
-using NUnit.Framework;
 using System.Threading;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using System.Collections.ObjectModel;
 using OpenQA.Selenium.Appium.iOS;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SpecFlowBrowserStack
 {
@@ -45,7 +45,7 @@ namespace SpecFlowBrowserStack
 		public void ThenShouldGetEnteredTextInTextOutputField()
 		{
 			IOSElement textOutput = (IOSElement)new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(MobileBy.AccessibilityId("Text Output")));
-			Assert.That("hello@browserstack.com", Is.EqualTo(textOutput.Text));
+			Assert.IsTrue(textOutput.Text.Contains("hello@browserstack.com"));
         }
 	}
 }

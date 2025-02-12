@@ -1,12 +1,12 @@
 ﻿using Reqnroll;
 using System;
-using NUnit.Framework;
 using System.Threading;
 using OpenQA.Selenium.Appium.iOS;
 using System.Collections.ObjectModel;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SpecFlowBrowserStack
 {
@@ -27,7 +27,7 @@ namespace SpecFlowBrowserStack
             testButton.Click();
         }
 
-		[Then(@"I should see \""Up and running\""")]
+		[Then(@"I should see Up and running")]
 		public void ThenIShouldSeeLocalText()
 		{
 			WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
@@ -46,7 +46,7 @@ namespace SpecFlowBrowserStack
 
             String expectedString = "Up and running";
 
-            Assert.True(resultString.Contains(expectedString.ToLower()));
+            Assert.IsTrue(resultString.Contains(expectedString.ToLower()));
         }
 	}
 }

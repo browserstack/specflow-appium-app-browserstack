@@ -2,11 +2,11 @@ using Reqnroll;
 using OpenQA.Selenium;
 using System;
 using OpenQA.Selenium.Support.UI;
-using NUnit.Framework;
 using System.Threading;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using System.Collections.ObjectModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SpecFlowBrowserStack
 {
@@ -41,7 +41,7 @@ namespace SpecFlowBrowserStack
 		public void ThenSearchResultsShouldBeListed()
 		{
             ReadOnlyCollection<AndroidElement> allProductsName = _driver.FindElements(By.ClassName("android.widget.TextView"));
-            Assert.True(allProductsName.Count > 0);
+            Assert.IsTrue(allProductsName.Count > 0);
         }
 	}
 }
